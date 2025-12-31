@@ -4,7 +4,7 @@ const API = import.meta.env.VITE_API_URL;
 
 // Fetch all ice creams (public)
 export const fetchElectronic = async () => {
-  const res = await fetch(`${API}/electronics`);
+  const res = await fetch(`${API}/api/electronics`);
   if (!res.ok) throw new Error("Failed to fetch electronics");
   return res.json();
 };
@@ -15,7 +15,7 @@ const authHeaders = (token) =>
 
 // Create a new electronic (requires admin token)
 export const createElectronic = async (formData, token) => {
-  const res = await fetch(`${API}/electronics`, {
+  const res = await fetch(`${API}/api/electronics`, {
     method: "POST",
     body: formData,
     headers: authHeaders(token), //  only Authorization
@@ -32,7 +32,7 @@ export const createElectronic = async (formData, token) => {
 export const updateElectronic = async (id, formData, token) => {
   if (!token) throw new Error("Unauthorized: No token provided");
 
-  const res = await fetch(`${API}/electronics/${id}`, {
+  const res = await fetch(`${API}/api/electronics/${id}`, {
     method: "PUT",
     body: formData,
     headers: authHeaders(token), // only Authorization
@@ -49,7 +49,7 @@ export const updateElectronic = async (id, formData, token) => {
 export const deleteElectronic = async (id, token) => {
   if (!token) throw new Error("Unauthorized: No token provided");
 
-  const res = await fetch(`${API}/electronics/${id}`, {
+  const res = await fetch(`${API}/api/electronics/${id}`, {
     method: "DELETE",
     headers: authHeaders(token),
   });

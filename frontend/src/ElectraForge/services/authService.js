@@ -1,7 +1,7 @@
 // src/services/authService.js
 
 // const API = "http://localhost:5000/api/auth";
-const API = import.meta.env.VITE_API_URL + "/auth";
+const API = import.meta.env.VITE_API_URL;
 
 
 
@@ -11,7 +11,7 @@ const API = import.meta.env.VITE_API_URL + "/auth";
  */
 export const signup = async (user) => {
   try {
-    const res = await fetch(`${API}/signup`, {
+    const res = await fetch(`${API}/auth/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
@@ -37,7 +37,7 @@ export const signup = async (user) => {
  */
 export const signin = async (user) => {
   try {
-    const res = await fetch(`${API}/signin`, {
+    const res = await fetch(`${API}/auth/signin`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
@@ -71,7 +71,7 @@ export const signin = async (user) => {
  */
 export const loginAdmin = async (admin) => {
   try {
-    const res = await fetch(`${API}/admin-login`, {
+    const res = await fetch(`${API}/auth/admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(admin),
