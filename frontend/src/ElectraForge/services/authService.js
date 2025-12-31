@@ -1,7 +1,8 @@
 // src/services/authService.js
 
 // const API = "http://localhost:5000/api/auth";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL + "/auth";
+
 
 
 /**

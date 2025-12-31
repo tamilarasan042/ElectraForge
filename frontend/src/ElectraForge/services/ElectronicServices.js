@@ -1,6 +1,7 @@
 // const API = "http://localhost:5000/api";
 const API = import.meta.env.VITE_API_URL;
 
+
 // Fetch all ice creams (public)
 export const fetchElectronic = async () => {
   const res = await fetch(`${API}/electronics`);
