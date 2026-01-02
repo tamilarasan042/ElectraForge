@@ -17,7 +17,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "https://electra-forge.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
