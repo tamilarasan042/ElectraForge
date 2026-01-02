@@ -55,17 +55,19 @@ const [activeVideoId, setActiveVideoId] = useState(null);
       <div style={styles.grid}>
         {electronics.map((item) => (
           <div key={item._id} style={styles.card}>
+
             <img
-              src={
-                item.image
-                  ? item.image.startsWith("http")
-                    ? item.image
-                    : `http://localhost:5000/uploads/${item.image}`
-                  : "https://via.placeholder.com/180"
-              }
-              alt={item.name}
-              style={styles.image}
-            />
+  src={
+    item.image
+      ? item.image.startsWith("http")
+        ? item.image
+        : `${BASE_URL}/${item.image}`
+      : "https://via.placeholder.com/180"
+  }
+  alt={item.name}
+  style={styles.image}
+/>
+
 
             <h3 style={styles.name}>{item.name}</h3>
             <p style={styles.desc}>{item.description}</p>
