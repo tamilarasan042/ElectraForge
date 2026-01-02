@@ -71,7 +71,7 @@ export const signin = async (user) => {
  */
 export const loginAdmin = async (admin) => {
   try {
-    const res = await fetch(`${API}/auth/admin/login`, {
+    const res = await fetch(`${API}/auth/admin-login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(admin),
