@@ -46,6 +46,7 @@ const [activeVideoId, setActiveVideoId] = useState(null);
 
   return match ? match[1] : null;
 };
+const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
 
   return (
     <div style={styles.page} >
